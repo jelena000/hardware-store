@@ -38,6 +38,8 @@ export class RegisterComponent implements OnInit {
             confirmPassword: ['', Validators.required],
         });
         
+        // get return url from route parameters or default to '/'
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
     register(){
@@ -51,7 +53,7 @@ export class RegisterComponent implements OnInit {
                 return;
             }
 
-            let form_data = {
+            let data = {
                 email : email.value, 
                 password : password.value, 
                 confirmPassword : confirmPassword.value, 
@@ -64,10 +66,21 @@ export class RegisterComponent implements OnInit {
                 hello : hello.value
             }
 
-            this.auth.createUserWithEmailAndPassword(form_data.email, form_data.password)
+            this.auth.createUserWithEmailAndPassword(data.email, data.password)
             .then(data=>{
                 console.log('user signup success ',data);
-                this.saveAdditionalUserData(data.user.uid, form_data);
+
+                this.firestore.collection('users').doc(data.user.uid).set(data)
+                .then(() => {
+                    this.loading = false;
+                    this.router.navigate(['/']);
+                })
+                .catch((err) => {
+                    this.loading = false;
+                    console.log({err});
+
+                    alert('sometinh wrong')
+                })
             })
             .catch((error) => {
                 this.loading = false;
@@ -84,17 +97,24 @@ export class RegisterComponent implements OnInit {
         }
     }
 
-    saveAdditionalUserData(userId, form_data){
-        this.firestore.collection('users').doc(userId).set(form_data)
-        .then((res) => {
-            
+    forgotPassword(){
+        try {
+            const { email } = this.form.controls;
+            this.loading = true;
+
+            this.auth.sendPasswordResetEmail(email.value)
+            .then((data) => {
+                this.loading = false;
+                //console.log({data});
+                
+            }).catch((err) => {
+                this.loading = false;
+                //console.log({err});
+            })
+        } catch (error) {
+            console.log({error});
             this.loading = false;
-            this.router.navigate(['/register/insert-photo', userId]);
-        })
-        .catch((err) => {
-            this.loading = false;
-            alert('sometinh wrong')
-        })
+        }
     }
 
     onSubmit() {

@@ -2,11 +2,12 @@
     <h3>LOGO</h3>
     <nav>
         <ul class="nav_links">
-            <li><a href="#">MIETTN</a></li>
-            <li><a href="#">VERMIETEN</a></li>
-            <li><a href="#">FAVORITEN</a></li>
-            <li><a href="#">MEIN KONTO</a></li>
-            <a href="login.html" class="cta"><button>login</button></a>
+            <li><a routerLink="/" >Home</a></li>
+            <li><a routerLink="/login" >Login</a></li>
+            <li><a routerLink="/register" >Register</a></li>
+            <li><a routerLink="/reset-password" >Reset password</a></li>
+            <a href="login.html" class="cta" routerLink="/login"><button>login</button></a>
         </ul>
     </nav>
 </header>
+<router-outlet></router-outlet>

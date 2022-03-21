@@ -17,12 +17,16 @@
             <div class="input-container">
                 <input formControlName="password" type="password" name="password" id="password" placeholder="Password"/>
             </div>
-            <input *ngIf="loading" type="button" class="dugme" value="Loading">
             <div>
                 <button [disabled]="loading" class="dugme">
-                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                     Anmelden
                 </button>
+            </div>
+            <div style="margin-top: 10px;">
+                <a routerLink="/reset-password" style="color: black; text-decoration: underline;">Forgot Password?</a>
+                <br>
+                <br>
+                <a routerLink="/register" style="color: black; text-decoration: underline;">Create new account?</a>
             </div>
         </form>
     </div>

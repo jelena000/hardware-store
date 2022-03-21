@@ -1,1 +1,51 @@
-<p>register works!</p>
+<!--<app-header></app-header> -->
+<div class="login-container">
+    <div  class="login-imgSide">
+        <div style="display: flex;justify-content: center; align-items: center; ">
+            <img src="../assets/car.svg" style="width: 450px; height:650px;" alt="Girl in a jacket">
+        </div>
+    </div>  
+    <div class="login-form">
+        <div class="logo-title-container">
+            <h2>Registration</h2>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="input-container">
+                <input formControlName="hello" type="text" name="hello" id="hello" placeholder="Hello"/>
+            </div>
+            <div class="input-container">
+                <input formControlName="firstname" type="text" name="firstname" id="firstname" placeholder="First Name"/>
+            </div>
+            <div class="input-container">
+                <input formControlName="lastname" type="text" name="lastname" id="lastname" placeholder="Last Name"/>
+            </div>
+            <div class="input-container">
+                <input formControlName="phone" type="text" name="phone" id="phone" placeholder="Phone number"/>
+            </div>
+            <div class="input-container">
+                <input formControlName="location" type="text" name="location" id="location" placeholder="Location"/>
+            </div>
+            <div class="input-container">
+                <input formControlName="adress" type="text" name="adress" id="adress" placeholder="Adress"/>
+            </div>
+            <div class="input-container">
+                <input formControlName="postal" type="text" name="postal" id="postal" placeholder="Postal code"/>
+            </div>
+            <div class="input-container">
+                <input formControlName="email" type="email" name="email" id="email"  placeholder="E-mail"/>
+            </div>
+            <div class="input-container">
+                <input formControlName="password" type="password" name="password" id="password" placeholder="Password"/>
+            </div>
+            <div class="input-container">
+                <input formControlName="confirmPassword" type="text" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"/>
+            </div>
+            <div>
+                <button [disabled]="loading" class="dugme">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Register
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

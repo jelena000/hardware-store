@@ -1,0 +1,41 @@
+<!--<app-header></app-header> -->
+<div class="login-container">
+    <div  class="login-imgSide">
+        <div style="display: flex;justify-content: center; align-items: center; ">
+            <img src="../assets/car.svg" style="width: 450px; height:650px;" alt="Girl in a jacket">
+        </div>
+    </div>  
+    <div class="login-form">
+        <div class="logo-title-container">
+            <h2>Upload your image</h2>
+        </div>
+        <div style="width: 50%;">
+            <ngx-dropzone (change)="onSelect($event)" *ngIf="!selected">
+                <ngx-dropzone-label>
+                    Drop your Image 
+                    <br>
+                    or click to choose from computer
+                </ngx-dropzone-label>
+                <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                </ngx-dropzone-preview>
+            </ngx-dropzone>
+            <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+            </ngx-dropzone-image-preview>
+            <div style="display: flex; margin-top: 20px; width: 100%;">
+                <div style="padding: 2px; flex: 1;">
+                    <button [disabled]="loading" class="dugme" (click)="onSubmit()">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Skip
+                    </button>
+                </div>
+                <div style="padding: 2px; flex: 1;">
+                    <button [disabled]="loading" class="dugme" (click)="onShowImage()">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Upload Photo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
