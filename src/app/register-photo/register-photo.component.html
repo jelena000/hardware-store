@@ -22,20 +22,24 @@
             </ngx-dropzone>
             <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
             </ngx-dropzone-image-preview>
+            <div>
+                <img *ngIf="imageUrl" src={{imageUrl}} style="width: 100px; height: 100px;"/>
+            </div>
             <div style="display: flex; margin-top: 20px; width: 100%;">
                 <div style="padding: 2px; flex: 1;">
-                    <button [disabled]="loading" class="dugme" (click)="onSubmit()">
+                    <button [disabled]="loading" class="dugme" (click)="onSkip()">
                         <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                         Skip
                     </button>
                 </div>
                 <div style="padding: 2px; flex: 1;">
-                    <button [disabled]="loading" class="dugme" (click)="onShowImage()">
+                    <button [disabled]="loading" class="dugme" (click)="onSubmit()">
                         <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                         Upload Photo
                     </button>
                 </div>
             </div>
+            <div *ngIf="loading" style="color: black;">LOADING</div>
         </div>
     </div>
 </div>

@@ -1,6 +1,4 @@
-<!--<app-header></app-header> -->
 <div class="login-container">
- <!--login-imgSide-->
     <div  class="login-imgSide">
         <div style="display: flex;justify-content: center; align-items: center; ">
             <img src="../assets/car.svg" style="width: 450px; height:650px;" alt="Girl in a jacket">
@@ -10,7 +8,10 @@
         <div class="logo-title-container">
             <h2>Anmelden</h2>
         </div>
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div *ngIf="errorMsg" style="padding: 10px; color: red; font-size: 12px; text-align: center; width: 300px;">
+            {{errorMsg}}
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" >
             <div class="input-container">
                 <input formControlName="email" type="email" name="email" id="email"  placeholder="E-mail"/>
             </div>
@@ -18,7 +19,7 @@
                 <input formControlName="password" type="password" name="password" id="password" placeholder="Password"/>
             </div>
             <div>
-                <button [disabled]="loading" class="dugme">
+                <button [disabled]="loading" class="dugme" type="submit">
                     Anmelden
                 </button>
             </div>

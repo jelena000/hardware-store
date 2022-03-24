@@ -6,7 +6,8 @@
             <li><a routerLink="/login" >Login</a></li>
             <li><a routerLink="/register" >Register</a></li>
             <li><a routerLink="/reset-password" >Reset password</a></li>
-            <a href="login.html" class="cta" routerLink="/login"><button>login</button></a>
+            <button *ngIf="!isLoggedIn" class="cta" (click)="onLogin()">Login</button>
+            <button *ngIf="isLoggedIn" class="cta" (click)="onLogout()">Log out</button>
         </ul>
     </nav>
 </header>

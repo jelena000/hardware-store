@@ -45,6 +45,10 @@ input{
     cursor: pointer;
 }
 
+.dugme:hover {
+    background-color: #436180 !important;
+}
+
 .logo-title-container {
     margin-bottom: 30px;
 }
