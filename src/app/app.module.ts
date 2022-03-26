@@ -23,7 +23,6 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     ResetPasswordComponent,
     HomeComponent,
     RegisterPhotoComponent,
-    
   ],
   imports: [
     BrowserModule,

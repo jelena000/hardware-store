@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component'
 import { ResetPasswordComponent } from './reset-password/reset-password.component'
 import { RegisterPhotoComponent } from './register-photo/register-photo.component';
 
+//Define navigation routes for all pages 
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AngularFireAuth  } from '@angular/fire/auth';
-import { AngularFirestore  } from '@angular/fire/firestore';
 import constants from '../../constants/constants';
 
 @Component({
@@ -11,7 +10,7 @@ import constants from '../../constants/constants';
   styleUrls: ['./reset-password.component.css']
 })
 export class ResetPasswordComponent implements OnInit {
-    //Form group for all reseting password(password and confirmPassword) 
+    //Form group for reseting password(password and confirmPassword) 
     form1: FormGroup;
     //Form group for sending email link(email) 
     form2: FormGroup;
@@ -25,12 +24,12 @@ export class ResetPasswordComponent implements OnInit {
     errorMsg: string;
     //Email from confirmation link
     email: string;
+
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
         private auth: AngularFireAuth,
-        private firestore: AngularFirestore,
     ) {}
 
     ngOnInit(): void {

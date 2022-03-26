@@ -1,12 +1,11 @@
 <header>
-    <h3>LOGO</h3>
+    <h3 class="title">HWR</h3>
     <nav>
         <ul class="nav_links">
-            <li><a routerLink="/" >Home</a></li>
-            <li><a routerLink="/login" >Login</a></li>
-            <li><a routerLink="/register" >Register</a></li>
-            <li><a routerLink="/reset-password" >Reset password</a></li>
-            <button *ngIf="!isLoggedIn" class="cta" (click)="onLogin()">Login</button>
+            <li><a routerLink="/" >Mieten</a></li>
+            <li><a routerLink="/" >Vermieten</a></li>
+            <li><a routerLink="/" >Favoriten</a></li>
+            <li><a routerLink="/" >Mein Konto</a></li>
             <button *ngIf="isLoggedIn" class="cta" (click)="onLogout()">Log out</button>
         </ul>
     </nav>

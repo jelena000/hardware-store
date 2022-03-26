@@ -1,26 +1,25 @@
 
+@media(max-width:1300px){
+    .login-imgSide{
+        display: none !important;
+    }
+    .reg-form{
+        width:100% !important;
+    }
+    
+    .reg-mob{
+        display: block!important;
+    }
+
+    .title-container {
+        width: 70% !important;
+        margin: auto;
+    }
+}
 .login-container{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.login-form{
-    width: 50%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-}
-.login-form input{
-    display: block;
-    padding: 8px;
-    border-radius: 4px;
-    width: 300px;  
-    border: 1px solid #30475E !important;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    height: 40px;
 }
 
 .login-imgSide{
@@ -36,13 +35,23 @@ input{
     border: 0px;
 }
 
-.dugme{
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.btn-submit{
     border-radius: 4px;
     background-color: #30475E !important;
     color: white;
     height: 40px;
-    width: 100%;
     border: 0px;
+    width: 300px;  
+    cursor: pointer;
+
 }
 
 .logo-title-container {
@@ -52,4 +61,54 @@ input{
 .input-container {
     margin-bottom: 15px;
     margin-top: 15px;
+}
+
+.title-container {
+    text-align: center;
+}
+
+.reg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reg-form{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+.reg-form input{
+    display: block;
+    margin-top:15px;
+    padding: 8px;
+    border-radius: 4px;
+    width: 300px;  
+    border-color: #30475E;  
+    border: 1px solid #30475E !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 40px;
+}
+.reg-imgSide{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: #30475E;
+}
+
+.btn-reg{
+    border-radius: 4px;
+    background-color: #30475E !important;
+    color: white;
+    cursor: pointer;
+
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

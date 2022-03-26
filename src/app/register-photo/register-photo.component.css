@@ -1,4 +1,13 @@
 
+@media(max-width:787px){
+    .login-imgSide{
+        display: none !important;
+    }
+    .login-form{
+        width:100% !important;
+    }
+}
+
 .login-container{
     display: flex;
     justify-content: center;
@@ -35,13 +44,15 @@ input{
     border: 0px;
 }
 
-.dugme{
+.btn{
     border-radius: 4px;
     background-color: #30475E !important;
     color: white;
     height: 40px;
     width: 100%;
     border: 0px;
+    cursor: pointer;
+
 }
 
 .logo-title-container {

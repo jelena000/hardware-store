@@ -1,54 +1,63 @@
-<!--<app-header></app-header> -->
 <div class="login-container">
     <div  class="login-imgSide">
         <div style="display: flex;justify-content: center; align-items: center; ">
-            <img src="../assets/car.svg" style="width: 450px; height:650px;" alt="Girl in a jacket">
+            <img src="../assets/idea-img.svg" style="width: 400px; height:600px;" alt="Girl in a jacket">
         </div>
     </div>  
-    <div class="login-form">
-        <div class="logo-title-container">
-            <h2>Registration</h2>
+    <div class="reg-form">
+        <div style="margin-bottom: 10px;">
+            <img src="../assets/HWRLogo.svg" alt="logo" width="170px" height="170px">
         </div>
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-            <div class="input-container">
-                <input formControlName="hello" type="text" name="hello" id="hello" placeholder="Hello"/>
+        <div class="title-container">
+            <h2>
+                Estelle jetzt ein kostenloses Konto bei HWR
+            </h2>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" style=" margin-top:45px;">
+            <div class="reg-mob" style= "display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                <div class="reg-form-firstSection" style="width: 50%; margin-right: 20px;">
+                    <div class="input-container">
+                        <input formControlName="hello" type="text" name="hello" id="hello" placeholder="Anrede"/>
+                    </div>
+                    <div class="input-container">
+                        <input formControlName="firstname" type="text" name="firstname" id="firstname" placeholder="Vorname"/>
+                    </div>
+                    <div class="input-container">
+                        <input formControlName="lastname" type="text" name="lastname" id="lastname" placeholder="Nachname"/>
+                    </div>
+                    <div class="input-container">
+                        <input formControlName="email" type="email" name="email" id="email" placeholder="E-mail"/>
+                    </div>
+                    <div class="input-container">
+                        <input formControlName="password" type="password" name="password" id="password" placeholder="Password"/>
+                    </div>
+                </div>
+                <div class="reg-form-secondSection" style="width: 50%;">
+                    <div class="input-container">
+                        <input formControlName="adress" type="text" name="adress" id="adress" placeholder="Adresse & Nr."/>
+                    </div>
+                    <div class="input-container">
+                        <input formControlName="postal" type="text" name="postal" id="postal" placeholder="PLZ"/>
+                    </div>
+                    <div class="input-container">
+                        <input formControlName="location" type="text" name="ort" id="ort"  placeholder="Ort"/>
+                    </div>
+                    <div class="input-container">
+                        <input formControlName="phone" type="text" name="phone" id="phone"  placeholder="Telefonnummer"/>
+                    </div>
+                    <div class="input-container">
+                        <input formControlName="confirmPassword" type="password" name="confirmPassword" id="confirmPassword" placeholder="Password wiederholen"/>
+                    </div>
+                </div>
             </div>
-            <div class="input-container">
-                <input formControlName="firstname" type="text" name="firstname" id="firstname" placeholder="First Name"/>
-            </div>
-            <div class="input-container">
-                <input formControlName="lastname" type="text" name="lastname" id="lastname" placeholder="Last Name"/>
-            </div>
-            <div class="input-container">
-                <input formControlName="phone" type="text" name="phone" id="phone" placeholder="Phone number"/>
-            </div>
-            <div class="input-container">
-                <input formControlName="location" type="text" name="location" id="location" placeholder="Location"/>
-            </div>
-            <div class="input-container">
-                <input formControlName="adress" type="text" name="adress" id="adress" placeholder="Adress"/>
-            </div>
-            <div class="input-container">
-                <input formControlName="postal" type="text" name="postal" id="postal" placeholder="Postal code"/>
-            </div>
-            <div class="input-container">
-                <input formControlName="email" type="email" name="email" id="email"  placeholder="E-mail"/>
-            </div>
-            <div class="input-container">
-                <input formControlName="password" type="password" name="password" id="password" placeholder="Password"/>
-            </div>
-            <div class="input-container">
-                <input formControlName="confirmPassword" type="text" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"/>
-            </div>
-            <div>
-                <button [disabled]="loading" class="dugme">
-                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            <div class="btn-container">
+                <button [disabled]="loading" class="btn-submit">
                     Register
                 </button>
             </div>
-            <div *ngIf="errorMsg" style="margin-top: 10px; color: red; font-size: 12px; text-align: center; width: 300px;">
+            <div *ngIf="errorMsg" style="margin-top: 10px; color: red; font-size: 12px; text-align: center; width: 100%">
                 {{errorMsg}}
             </div>
-        </form>
+        </form>   
     </div>
 </div>

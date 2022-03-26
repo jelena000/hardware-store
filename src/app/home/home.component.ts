@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth  } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import constants from '../../constants/constants.js'
 
 @Component({
   selector: 'app-home',
@@ -9,16 +11,22 @@ import { AngularFireAuth  } from '@angular/fire/auth';
 export class HomeComponent implements OnInit {
 
     constructor(
-        private auth: AngularFireAuth 
+        private router: Router,
     ) {}
 
     ngOnInit(): void {
-        //load user for testing
-        this.loadUser();
+        //check user
+        this.checkUser();
     }
 
-    async loadUser(){
-        let currentUser = await this.auth.currentUser;
-        console.log(currentUser);
+    //Check does user exists in local storage and if not navigate to login page
+    async checkUser(){
+        // Get user id of currently signin user from local storage
+        const local_data = localStorage.getItem(constants.USER_DATA);
+
+        if(!local_data){
+            //user doesn't exist, navigate to login page
+            this.router.navigate(['/login']);
+        }
     }
 }

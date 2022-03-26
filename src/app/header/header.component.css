@@ -1,5 +1,5 @@
 header{
-    background-color: #24252A;
+    background-color: #30475E;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,4 +36,8 @@ button{
     border-radius: 4px;
     border: 0px;
     cursor: pointer;
+}
+
+.title {
+    color: #fff;
 }

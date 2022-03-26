@@ -64,6 +64,7 @@ export class RegisterComponent implements OnInit {
             //Change loading state and clear error message
             this.loading = true;
             this.errorMsg = '';
+            
 
             //Check if from fields are valid
             if (this.form.invalid) {
@@ -131,6 +132,9 @@ export class RegisterComponent implements OnInit {
         //Firebase creates new document with all user data in collection "users"
         this.firestore.collection('users').doc(userId).set(form_data)
         .then((res) => {
+            //get user ID and save it in local storage 
+            localStorage.setItem(constants.USER_DATA, JSON.stringify({ userId: userId}));
+
             //After successfull upload, navigate to Page for uploading User Image
             this.loading = false;
             this.router.navigate(['/register/insert-photo', userId]);

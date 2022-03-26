@@ -1,33 +1,42 @@
 <div class="login-container">
     <div  class="login-imgSide">
         <div style="display: flex;justify-content: center; align-items: center; ">
-            <img src="../assets/car.svg" style="width: 450px; height:650px;" alt="Girl in a jacket">
+            <img src="../assets/idea-img.svg" style="width: 400px; height:600px;" alt="HWR">
         </div>
     </div>  
     <div class="login-form">
         <div class="logo-title-container">
+            <div style="margin-bottom: 10px;">
+                <img src="../assets/HWRLogo.svg" alt="logo" width="170px" height="170px">
+            </div>
             <h2>Anmelden</h2>
         </div>
         <div *ngIf="errorMsg" style="padding: 10px; color: red; font-size: 12px; text-align: center; width: 300px;">
             {{errorMsg}}
         </div>
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="input-container">
                 <input formControlName="email" type="email" name="email" id="email"  placeholder="E-mail"/>
             </div>
             <div class="input-container">
-                <input formControlName="password" type="password" name="password" id="password" placeholder="Password"/>
+                <input formControlName="password" type="password" name="password" id="password" placeholder="Passwort"/>
             </div>
             <div>
-                <button [disabled]="loading" class="dugme" type="submit">
+                <button [disabled]="loading" class="btn">
                     Anmelden
                 </button>
             </div>
-            <div style="margin-top: 10px;">
-                <a routerLink="/reset-password" style="color: black; text-decoration: underline;">Forgot Password?</a>
-                <br>
-                <br>
-                <a routerLink="/register" style="color: black; text-decoration: underline;">Create new account?</a>
+            <div class="cener-cont" style="margin-top: 10px;">
+                <div>
+                    <a routerLink="/reset-password" class="links">Passwort vergessen?</a>
+                    <br>
+                    <br>
+                    <h5>
+                        Sie haben noch kein Konto?
+                    </h5>
+                    <a routerLink="/register" class="links">Jetzt registrieren</a>
+                </div>
+                
             </div>
         </form>
     </div>
